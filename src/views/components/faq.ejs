@@ -1,0 +1,17 @@
+<section class="section faq section-reveal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Todo lo que necesitas saber antes de agendar</h2>
+    </div>
+
+    <div class="faq-list">
+      <% page.faq.forEach((item) => { %>
+      <details>
+        <summary><%= item.question %></summary>
+        <p><%= item.answer %></p>
+      </details>
+      <% }); %>
+    </div>
+  </div>
+</section>

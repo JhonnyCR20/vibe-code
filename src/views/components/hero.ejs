@@ -1,0 +1,27 @@
+<section class="hero section-reveal">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><%= page.hero.label %></p>
+      <h1><%= page.hero.title %></h1>
+      <p class="lead"><%= page.hero.subtitle %></p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= page.hero.primaryAction.href %>"><%= page.hero.primaryAction.text %></a>
+        <a class="btn btn-ghost" href="<%= page.hero.secondaryAction.href %>"><%= page.hero.secondaryAction.text %></a>
+      </div>
+
+      <div class="stats-grid" aria-label="Indicadores del negocio">
+        <% page.stats.forEach((item) => { %>
+        <article class="stat-card">
+          <p class="stat-value"><%= item.value %></p>
+          <p class="stat-label"><%= item.label %></p>
+        </article>
+        <% }); %>
+      </div>
+    </div>
+
+    <figure class="hero-media">
+      <img src="<%= page.hero.image %>" alt="Auto detallado con acabado premium" loading="eager" />
+    </figure>
+  </div>
+</section>

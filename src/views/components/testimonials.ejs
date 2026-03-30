@@ -1,0 +1,17 @@
+<section class="section testimonials section-reveal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Clientes satisfechos</p>
+      <h2>Confianza respaldada por experiencia</h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <% page.testimonials.forEach((item) => { %>
+      <article class="testimonial-card">
+        <p class="quote">"<%= item.text %>"</p>
+        <p class="author"><%= item.author %></p>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>

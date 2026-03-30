@@ -1,0 +1,45 @@
+<section class="section section-reveal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Servicios premium</p>
+      <h2>Paquetes creados para proteger y realzar tu inversion</h2>
+      <p class="section-note">Precio base para Sedan/Hatchback. Selecciona tipo de vehiculo en cada card para ver ajuste en tiempo real.</p>
+    </div>
+
+    <div class="service-grid">
+      <% page.services.forEach((service, index) => { %>
+      <% const whatsappMessage = encodeURIComponent(`Hola, soy de San Ramon de Alajuela y me interesa el servicio ${service.name} de ${page.brand.name}. Quiero cotizar y agendar.`); %>
+      <article class="service-card" data-service-card data-base-price="<%= service.basePriceCrc %>">
+        <h3><%= service.name %></h3>
+        <p><%= service.description %></p>
+        <div class="service-meta">
+          <span>Tiempo: <%= service.duration %></span>
+          <strong class="service-live-price" data-card-price data-base-label="Desde <%= service.from %>">Desde <%= service.from %></strong>
+        </div>
+
+        <div class="service-actions-row">
+          <a
+            class="btn btn-whatsapp service-contact"
+            href="https://wa.me/<%= page.brand.whatsapp %>?text=<%= whatsappMessage %>"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Contactar por WhatsApp</a
+          >
+
+          <div class="service-cascade">
+            <label class="service-vehicle-label" for="vehiculo-card-<%= index %>">Tipo de vehiculo</label>
+            <select class="service-vehicle-select" id="vehiculo-card-<%= index %>" data-card-vehicle>
+              <option value="">Seleccionar</option>
+              <% page.vehicleTypes.forEach((vehicle) => { %>
+              <option value="<%= vehicle.label %>" data-multiplier="<%= vehicle.multiplier %>"><%= vehicle.label %></option>
+              <% }); %>
+            </select>
+          </div>
+        </div>
+
+        <p class="service-price-note"><%= page.pricingNote %></p>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>

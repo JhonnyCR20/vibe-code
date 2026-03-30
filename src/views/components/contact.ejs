@@ -1,0 +1,67 @@
+<section class="section contact section-reveal">
+  <div class="container contact-grid">
+    <article class="contact-card">
+      <p class="eyebrow">Agenda tu cita</p>
+      <h2>Atencion personalizada para tu vehiculo</h2>
+      <p>
+        Escribenos por WhatsApp o correo para reservar una evaluacion sin costo. Atendemos de lunes a
+        sabado.
+      </p>
+      <ul>
+        <li>Telefono: <a href="tel:<%= page.brand.phoneHref %>"><%= page.brand.phone %></a></li>
+        <li>Correo: <a href="mailto:<%= page.brand.email %>"><%= page.brand.email %></a></li>
+        <li>Ubicacion: <%= page.brand.location %></li>
+      </ul>
+    </article>
+
+    <form
+      class="booking-form"
+      action="<%= page.googleForm.actionUrl %>"
+      method="post"
+      target="_blank"
+    >
+      <p class="field-help">
+        Este formulario envia tus datos a Google Forms para que lleguen directo al correo del negocio.
+      </p>
+
+      <label for="nombre">Nombre</label>
+      <input
+        id="nombre"
+        name="<%= page.googleForm.fields.name %>"
+        type="text"
+        placeholder="Tu nombre"
+        required
+      />
+
+      <label for="telefono">Telefono</label>
+      <input
+        id="telefono"
+        name="<%= page.googleForm.fields.phone %>"
+        type="tel"
+        placeholder="6277 6418"
+        required
+      />
+
+      <label for="servicio">Servicio de interes</label>
+      <select id="servicio" name="<%= page.googleForm.fields.service %>" required>
+        <option value="">Selecciona una opcion</option>
+        <% page.services.forEach((service) => { %>
+        <option value="<%= service.name %>"><%= service.name %></option>
+        <% }); %>
+      </select>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea
+        id="mensaje"
+        name="<%= page.googleForm.fields.message %>"
+        rows="4"
+        placeholder="Cuentanos que necesitas"
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+      <a class="btn btn-ghost" href="<%= page.googleForm.viewUrl %>" target="_blank" rel="noopener noreferrer"
+        >Abrir Google Form</a
+      >
+    </form>
+  </div>
+</section>

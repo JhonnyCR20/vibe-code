@@ -1,0 +1,16 @@
+<section class="section gallery section-reveal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Resultados reales</p>
+      <h2>Acabados espejo en cada detalle</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <% page.gallery.forEach((photo) => { %>
+      <figure class="gallery-item">
+        <img src="<%= photo.src %>" alt="<%= photo.alt %>" loading="lazy" />
+      </figure>
+      <% }); %>
+    </div>
+  </div>
+</section>

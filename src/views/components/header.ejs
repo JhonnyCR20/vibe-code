@@ -1,0 +1,38 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">LD</span>
+      <span class="brand-text"><%= page.brand.name %></span>
+    </a>
+
+    <div class="header-actions">
+      <button
+        class="theme-toggle"
+        type="button"
+        role="switch"
+        aria-checked="false"
+        aria-label="Cambiar tema"
+        data-theme-toggle
+      >
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="theme-toggle-label" data-theme-toggle-label>Tema auto</span>
+      </button>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        Menu
+      </button>
+    </div>
+
+    <nav id="menu-principal" class="site-nav" aria-label="Menu principal">
+      <% page.navigation.forEach((item) => { %>
+      <a
+        href="<%= item.href %>"
+        class="<%= item.isCta ? 'nav-cta' : 'nav-link' %> <%= page.currentPath === item.href ? 'is-active' : '' %>"
+        ><%= item.label %></a
+      >
+      <% }); %>
+    </nav>
+  </div>
+</header>
