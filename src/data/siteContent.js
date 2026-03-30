@@ -1,9 +1,9 @@
 const sharedContent = {
   brand: {
     name: "LuxDrive Detailing CR",
-    phone: "+506 6277 6418",
-    phoneHref: "+50662776418",
-    whatsapp: "50662776418",
+    phone: "+506 0000 0000",
+    phoneHref: "+50600000000",
+    whatsapp: "50600000000",
     email: "agenda@luxdrivecr.com",
     location: "San Ramon de Alajuela, Costa Rica",
   },
@@ -305,7 +305,7 @@ const pageConfigs = {
     path: "/contacto",
     meta: {
       title: "Contacto | LuxDrive Detailing CR",
-      description: "Agenda en San Ramon por Google Forms o WhatsApp al 6277 6418.",
+      description: "Agenda en San Ramon por Google Forms o WhatsApp del negocio.",
     },
     pageHeader: {
       eyebrow: "Contacto",
