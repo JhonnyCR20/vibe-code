@@ -10,10 +10,10 @@
       <% page.services.forEach((service, index) => { %>
       <% const whatsappMessage = encodeURIComponent(`Hola, soy de San Ramon de Alajuela y me interesa el servicio ${service.name} de ${page.brand.name}. Quiero cotizar y agendar.`); %>
       <article class="service-card" data-service-card data-base-price="<%= service.basePriceCrc %>">
-        <h3><%= service.name %></h3>
-        <p><%= service.description %></p>
+        <h3 class="service-title"><%= service.name %></h3>
+        <p class="service-description"><%= service.description %></p>
         <div class="service-meta">
-          <span>Tiempo: <%= service.duration %></span>
+          <span class="service-duration">Tiempo: <%= service.duration %></span>
           <strong class="service-live-price" data-card-price data-base-label="Desde <%= service.from %>">Desde <%= service.from %></strong>
         </div>
 
